@@ -64,8 +64,8 @@ namespace TelerikMvcApp4
 		{
 			configuration.HasProperty(x => x.Id).IsIdentity(KeyGenerator.Autoinc).HasFieldName("_id").WithDataAccessKind(DataAccessKind.ReadWrite).ToColumn("Id").IsNotNullable().HasColumnType("int").HasPrecision(0).HasScale(0);
 			configuration.HasProperty(x => x.Name).HasFieldName("_name").WithDataAccessKind(DataAccessKind.ReadWrite).ToColumn("Name").IsNotNullable().HasColumnType("nvarchar").HasLength(50);
-			configuration.HasProperty(x => x.Sold).HasFieldName("_sold").WithDataAccessKind(DataAccessKind.ReadWrite).ToColumn("Sold").IsNotNullable().HasColumnType("int").HasPrecision(0).HasScale(0).HasDefaultValue();
-			configuration.HasProperty(x => x.Price).HasFieldName("_price").WithDataAccessKind(DataAccessKind.ReadWrite).ToColumn("Price").IsNotNullable().HasColumnType("decimal").HasPrecision(18).HasScale(2).HasDefaultValue();
+			configuration.HasProperty(x => x.Sold).HasFieldName("_sold").WithDataAccessKind(DataAccessKind.ReadWrite).ToColumn("Sold").IsNotNullable().HasColumnType("int").HasPrecision(0).HasScale(0);
+			configuration.HasProperty(x => x.Price).HasFieldName("_price").WithDataAccessKind(DataAccessKind.ReadWrite).ToColumn("Price").IsNotNullable().HasColumnType("decimal").HasPrecision(18).HasScale(2);
 		}
 	}
 }

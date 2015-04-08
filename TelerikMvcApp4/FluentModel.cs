@@ -24,7 +24,7 @@ namespace TelerikMvcApp4
 {
 	public partial class CarsDb : OpenAccessContext, ICarsDbUnitOfWork
 	{
-        private static string connectionStringName = @"DefaultConnection";
+		private static string connectionStringName = @"DefaultConnection";
 			
 		private static BackendConfiguration backend = GetBackendConfiguration();
 				
@@ -61,7 +61,7 @@ namespace TelerikMvcApp4
 		public static BackendConfiguration GetBackendConfiguration()
 		{
 			BackendConfiguration backend = new BackendConfiguration();
-            backend.Backend = "Azure";
+			backend.Backend = "MsSql";
 			backend.ProviderName = "System.Data.SqlClient";
 		
 			CustomizeBackendConfiguration(ref backend);

@@ -138,7 +138,7 @@
     <Compile Include="CarsDbMetadataSource.cs" />
     <Compile Include="Controllers\CarsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="CarsDb.cs" />
+    <Compile Include="FluentModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
