@@ -24,7 +24,7 @@ namespace TelerikMvcApp4
 {
 	public partial class CarsDb : OpenAccessContext, ICarsDbUnitOfWork
 	{
-		private static string connectionStringName = @"CarsConnection";
+        private static string connectionStringName = @"DefaultConnection";
 			
 		private static BackendConfiguration backend = GetBackendConfiguration();
 				
