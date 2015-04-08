@@ -29,6 +29,8 @@ namespace TelerikMvcApp4.Controllers
     {
         public ActionResult Index()
         {
+            var db = new CarsDb();
+            var x = db.Cars.ToList();
             return View();
         }
     }
