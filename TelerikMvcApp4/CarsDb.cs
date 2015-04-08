@@ -62,7 +62,7 @@ namespace TelerikMvcApp4
 		{
 			BackendConfiguration backend = new BackendConfiguration();
 			backend.Backend = "MsSql";
-			backend.ProviderName = "System.Data.SqlClient";
+            backend.ProviderName = "MsSql";
 		
 			CustomizeBackendConfiguration(ref backend);
 		
