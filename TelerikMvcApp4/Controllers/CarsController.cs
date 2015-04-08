@@ -20,13 +20,13 @@ namespace TelerikMvcApp4.Controllers
         public IEnumerable<CarViewModel> Get()
         {
 
-            return Enumerable.Range(1, 5).Select(i => new CarViewModel
-                    {
-                        Id = i,
-                        Name = "Name"+i,
-                        Price =i*1000,
-                        Sold = 50+i
-                    });
+            //return Enumerable.Range(1, 5).Select(i => new CarViewModel
+            //        {
+            //            Id = i,
+            //            Name = "Name"+i,
+            //            Price =i*1000,
+            //            Sold = 50+i
+            //        });
             return (from c in db.Cars
                     select new CarViewModel
                     {
@@ -42,7 +42,8 @@ namespace TelerikMvcApp4.Controllers
             if (car != null && ModelState.IsValid)
             {
                 var newCar = new Car { Name = car.Name, Price = car.Price, Sold = car.Sold };
-                db.Add(newCar);
+               // db.Add(newCar);
+                db.Cars.Add(newCar);
                 db.SaveChanges();
                 car.Id = newCar.Id;
             }
@@ -72,7 +73,7 @@ namespace TelerikMvcApp4.Controllers
         {
 
             var dbCar = db.Cars.Single(c => c.Id == id);
-            db.Delete(dbCar);
+            db.Cars.Remove(dbCar);
 
 
             db.SaveChanges();
