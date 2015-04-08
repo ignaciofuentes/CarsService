@@ -61,8 +61,8 @@ namespace TelerikMvcApp4
 		public static BackendConfiguration GetBackendConfiguration()
 		{
 			BackendConfiguration backend = new BackendConfiguration();
-			backend.Backend = "MsSql";
-            backend.ProviderName = "MsSql";
+            backend.Backend = "Azure";
+			backend.ProviderName = "System.Data.SqlClient";
 		
 			CustomizeBackendConfiguration(ref backend);
 		
