@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div class="row">
+    <div id="grid"></div>
+</div>
+
+<script type="text/javascript">
+
+    $("#grid").kendoGrid({
+        toolbar: ["create"],
+        dataSource: {
+            transport: {
+                read: { url: "api/Cars", type: "GET" },
+                update: {
+                    url: function (options) {
+                        return "api/Cars/"+options.Id;
+                    },
+                    type: "PUT"
+                },
+                create: { url: "api/Cars", type: "POST" },
+                destroy: {
+                    url: function (options) {
+                        return "api/Cars/" + options.Id;
+                    }, type: "DELETE"
+                }
+
+            },
+            schema: {
+                model: {
+                    id: "Id",
+                    fields: {
+                        Id: { type: "number", editable: false },
+                        Name: { type: "string" }
+                    }
+                }
+            }
+        },
+        height: 550,
+        editable: "inline",
+        columns: [
+            "Id",
+            "Name",
+            "Sold",
+            "Price",
+            {
+                command: [
+                    { "name": "edit", "buttonType": "ImageAndText", "text": "Edit" },
+                    { "name": "destroy", "buttonType": "ImageAndText", "text": "Delete" }
+                ]
+            }]
+
+    });
+</script>
+
+
+
